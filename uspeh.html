@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uspeh</title>
+    <style>
+        body {
+            background-image: url('zmaga.jpg');
+            background-size: cover;
+            background-position: center;
+            font-family: Arial, sans-serif;
+            color: white;
+            text-align: center;
+            padding-top: 20%;
+        }
+        h1, p {
+            background-color: black;
+            color: white;
+            display: inline-block;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .button-container {
+            margin-top: 20px;
+        }
+        button {
+            background-color: black;
+            color: white;
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: gray;
+        }
+
+    </style>
+    <script>
+        // Function to extract the URL parameter
+        function getQueryParameter(name) {
+            var urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name);
+        }
+
+        window.onload = function() {
+            var probability = getQueryParameter('probability');
+            document.getElementById('probability').innerText = probability + "%";
+        };
+    </script>
+</head>
+<body>
+
+    <h1>Uspeh!</h1><br>
+    <p>Čestitamo! Vaša strategija ima verjetnost uspeha nad 50%.</p>
+    <br>
+    <p>Verjetnost uspeha: <span id="probability"></span></p>
+<div class="button-container">
+        <button onclick="window.location.href='konec.html'">Konec</button>
+        <button onclick="window.location.href='start.html'">Nazaj</button>
+    </div>
+
+
+</body>
+</html>

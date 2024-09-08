@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poraz</title>
+    <style>
+        body {
+            background-image: url('poraz1.jpg');
+            background-size: cover;
+            background-position: center;
+            font-family: Arial, sans-serif;
+            color: white;
+            text-align: center;
+            padding-top: 20%;
+        }
+        h1, p {
+            background-color: black;
+            color: white;
+            display: inline-block;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        button {
+            padding: 15px;
+            font-size: 20px;
+            margin: 20px;
+            width: 80%;
+            max-width: 300px;
+            background-color: #ff4b4b;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #message-box {
+            margin-bottom: 20px;
+        }
+    </style>
+    <script>
+        // Function to extract URL parameters
+        function getQueryParameter(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name);
+        }
+
+        window.onload = function() {
+            // Get the parameters from the URL
+            var probability = getQueryParameter('probability');
+            var denar = getQueryParameter('denar');
+            var zacetnaStava = getQueryParameter('zacetna_stava');
+            var zasluzek = getQueryParameter('zasluzek');
+            var limit = getQueryParameter('limit');
+
+            // Check if the probability is actually a number and trim any unwanted symbols
+            if (probability) {
+                probability = probability.replace(/[^0-9.]/g, ''); // Strip out any non-numeric characters
+            }
+
+            // Display the probability message
+            document.getElementById('probability').innerText = "Zguba. Verjetnost uspeha je " + probability + "%";
+
+            // Handle the button click to redirect to gamble.html with correct parameters
+            document.getElementById('restart-btn').onclick = function() {
+                var url = `gamble.html?denar=${denar}&zacetna_stava=${zacetnaStava}&zasluzek=${zasluzek}&limit=${limit}`;
+                window.location.href = url;
+            };
+        };
+    </script>
+</head>
+<body>
+
+    <div id="message-box">
+        <h1 id="probability"></h1><br>
+    </div>
+
+    <button id="restart-btn">Lahko premagam statistiko</button>
+
+</body>
+</html>
+

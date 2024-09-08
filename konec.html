@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Konec Igre</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 50px;
+            color: #333;
+        }
+
+        button {
+            padding: 15px;
+            font-size: 20px;
+            margin: 20px;
+            width: 80%;
+            max-width: 300px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #red-button {
+            background-color: red;
+            color: white;
+        }
+
+        #black-button {
+            background-color: black;
+            color: white;
+        }
+    </style>
+    <script>
+        function redirectToStart() {
+            alert("Narobe :("); // Show message
+            window.location.href = "start.html"; // Redirect to start.html
+        }
+
+        function redirectToHappyEnding() {
+            window.location.href = "happyending.html"; // Redirect to happyending.html
+        }
+    </script>
+</head>
+<body>
+
+    <h1>Igre na srečo so</h1>
+
+    <button id="red-button" onclick="redirectToHappyEnding()">Zabavne</button>
+    <button id="black-button" onclick="redirectToStart()">Dober način da zaslužim denar</button>
+
+</body>
+</html>
