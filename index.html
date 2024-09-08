@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form with 4 Input Boxes</title>
+    <script src="start.js"></script>
+    <style>
+        /* Centering the form */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            width: 90%;
+            max-width: 400px;
+            padding: 20px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            background-color: #f9f9f9;
+        }
+        label, div {
+            font-size: 16px;
+            margin-bottom: 5px;
+            text-align: center;
+        }
+        input[type="text"] {
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            margin-bottom: 20px;
+        }
+        input[type="submit"] {
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 4px;
+            border: none;
+            background-color: #28a745;
+            color: white;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+
+    <form onsubmit="event.preventDefault(); openResultPage();">
+        <label for="money">Koliko denarja imaš na voljo:</label>
+        <input type="text" id="money" name="money">
+
+        <label for="input2">Koliko želiš zaslužiti:</label>
+        <input type="text" id="input2" name="input2">
+
+        <div>Pozor kazino ima po navadi minimalno in maksimalno stavo da omejijo sistem Martingale za ruleto.</div>
+
+        <label for="input3">Začetna stava:</label>
+        <input type="text" id="input3" name="input3" value="10">
+
+        <label for="input4">Maximalna stava:</label>
+        <input type="text" id="input4" name="input4" value="500">
+
+        <input type="submit" value="Pojdi v kazino">
+    </form>
+
+</body>
+</html>
